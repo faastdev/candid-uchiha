@@ -432,6 +432,16 @@ p {
   padding-top: 7%;
 }
 
+.titre-capacites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 3.25em;
+  padding-top: 7%;
+}
+
 .titre-histoireuchi {
   display: flex;
   justify-content: center;
@@ -728,6 +738,11 @@ footer {
   transition: 0.5s;
 }
 
+.lefeu {
+  width: 5%;
+  margin-left: 3%;
+}
+
 .footerNav {
   margin: 30px 0;
 }
@@ -796,6 +811,51 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: #787676;
+}
+
+.grid_capacites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crée trois colonnes de taille égale */
+  grid-template-rows: auto auto; /* Deux lignes dont la hauteur s'adapte au contenu */
+  gap: 20px; /* Espacement entre les grilles */
+  justify-content: center; /* Centre horizontalement la grille entière */
+  /* Centre verticalement les éléments dans leurs cellules */
+  padding: 6%; /* Ajoute un peu de padding autour de la grille */
+}
+.grid_capacites .titre {
+  font-size: 1.25em;
+  font-family: "Rubik Mono One", sans-serif;
+  color: #FFFFFB;
+}
+.grid_capacites .titre2 {
+  font-size: 1.25em;
+  font-family: "Rubik Mono One", sans-serif;
+  color: #FFFFFB;
+  margin-top: 19px;
+}
+.grid_capacites .titre3 {
+  font-size: 1.25em;
+  font-family: "Rubik Mono One", sans-serif;
+  color: #FFFFFB;
+  margin-top: 19px;
+}
+.grid_capacites .description {
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  color: #FFFFFB;
+  padding: 4%;
+}
+
+.grid_capacites_item {
+  display: flex;
+  flex-direction: column; /* Organise les enfants (img et p) en colonne */
+  align-items: center; /* Centre les enfants horizontalement dans la cellule */
+  text-align: center; /* Assure que le texte à l'intérieur des paragraphes est centré */
+}
+
+.grid_capacites_item img {
+  width: 40%; /* Assure que l'image ne dépasse pas sa cellule */
+  height: auto; /* Garde le ratio d'aspect de l'image */
 }
 
 .mangekyou {
@@ -1102,11 +1162,10 @@ h4 {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 10px 0 8px rgba(0, 0, 0, 0.3);
-  background-color: #ddd4d4;
+  background-color: RGB(218, 193, 135);
   margin: 0 5%;
   transform-style: preserve-3d;
   transform-origin: center center;
-  transition: transform 0.5s;
   padding-bottom: 2%;
 }
 .card-container .card img {
@@ -1127,6 +1186,42 @@ h4 {
   font-family: "Rubik Mono One", sans-serif;
 }
 .card-container .card .card-content p {
+  margin-bottom: 0;
+  font-size: 1em;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+}
+.card-container .card2 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 10px 0 8px rgba(0, 0, 0, 0.3);
+  background-color: RGB(73, 101, 139);
+  margin: 0 5%;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  padding-bottom: 2%;
+}
+.card-container .card2 img {
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #ccc;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.card-container .card2 .card-content {
+  padding: 2%;
+}
+.card-container .card2 .card-content h2 {
+  margin-top: 0;
+  font-size: 2em;
+  font-family: "Rubik Mono One", sans-serif;
+}
+.card-container .card2 .card-content p {
   margin-bottom: 0;
   font-size: 1em;
   font-weight: 300;

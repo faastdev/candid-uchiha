@@ -1,38 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-  var players = [];
-  var swiper = new Swiper(".swiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 800,
-      modifier: 1,
-      slideShadows: false
-    },
-    keyboard: {
-      enabled: true
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1
-      },
-      768: {
-        slidesPerView: 1
-      },
-      1024: {
-        slidesPerView: 2 
-      },
-      1560: {
-        slidesPerView: 2
-      }
-    },
-  });
   var navbar = document.getElementById('navbar');
 
   var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
@@ -147,24 +113,39 @@ video.volume = 0.1; // Réglez le volume à
 
   createBubbles();
 
-  const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.card');
+    const cards2 = document.querySelectorAll('.card2');
 
-  cards.forEach(function (card) {
-    card.addEventListener('mousemove', function (event) {
-      const cardRect = card.getBoundingClientRect();
-      const mouseX = event.clientX - cardRect.left;
-      const mouseY = event.clientY - cardRect.top;
+    function addCardAnimation(card) {
+      card.addEventListener('mousemove', function (event) {
+          const cardRect = card.getBoundingClientRect();
+          const mouseX = event.clientX - cardRect.left;
+          const mouseY = event.clientY - cardRect.top;
+  
+          // Centrer les valeurs autour de zéro et réduire l'amplitude de rotation
+          const centerX = cardRect.width / 2;
+          const centerY = cardRect.height / 2;
+          const rotateX = -((mouseY - centerY) / centerY) * 15; // Réduit l'angle de rotation max
+          const rotateY = ((mouseX - centerX) / centerX) * 15; // Réduit l'angle de rotation max
+  
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+  
+      card.addEventListener('mouseout', function () {
+          card.style.transition = 'transform 0.5s ease-out'; // Ajoute une transition lisse
+          card.style.transform = 'none';
+      });
+  
+      card.addEventListener('mouseenter', function () {
+          card.style.transition = 'none'; // Enlève la transition lors du mouvement de la souris pour éviter des retards
+      });
+  }
+  
 
-      const rotateX = (mouseY / cardRect.height - 0.5) * 30;
-      const rotateY = (mouseX / cardRect.width - 0.5) * 30;
-
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(150px)`;
-    });
-
-    card.addEventListener('mouseout', function () {
-      card.style.transform = 'none';
-    });
-});
+  // Apply the animation to all '.card' elements
+  cards.forEach(addCardAnimation);
+  // Apply the animation to all '.card2' elements
+  cards2.forEach(addCardAnimation);
 
 var video2 = document.getElementById('videoPlayer');
 var fadeOutDelay = 2000; // Délai en millisecondes avant que la vidéo ne commence à disparaître
