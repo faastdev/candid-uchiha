@@ -77,10 +77,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('playButton').addEventListener('click', function() {
     var audio = document.getElementById('myaudio');
     audio.play();
-});
-
-document.getElementById('playButton').addEventListener('click', function() {
-  this.style.display = 'none';
+    this.style.display = 'none';
 });
 
   videos.forEach(function(video) {
