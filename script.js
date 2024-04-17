@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   var videos = document.querySelectorAll('.video');
   var audio = document.getElementById('myaudio');
   audio.volume = 0.05; // Réglez le volume à 50%
+  document.getElementById('playButton').addEventListener('click', function() {
+    var audio = document.getElementById('myaudio');
+    audio.play();
+});
+
+document.getElementById('playButton').addEventListener('click', function() {
+  this.style.display = 'none';
+});
 
   videos.forEach(function(video) {
     video.addEventListener('play', function() {
