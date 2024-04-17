@@ -166,6 +166,39 @@ video.volume = 0.1; // Réglez le volume à
     });
 });
 
+var video2 = document.getElementById('videoPlayer');
+var fadeOutDelay = 2000; // Délai en millisecondes avant que la vidéo ne commence à disparaître
+var text2 = document.querySelector('.apparition2');
+video2.volume = 0.1; // Réglez le volume à 10%
+
+var observer2 = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) { // Lorsque la vidéo est visible dans le viewport
+          video2.play(); // Commencez à jouer la vidéo
+          setTimeout(function() {
+              video2.style.opacity = '0'; // Commencez le fondu de la vidéo
+              setTimeout(function() {
+                  video2.style.display = 'none'; // Cachez complètement la vidéo après le fondu
+                  text2.style.display = 'block';
+                  text2.style.opacity = '1'; // Faites apparaître le texte
+              }, 1000); // Le délai correspond à la durée de la transition CSS
+          }, fadeOutDelay);
+      }
+  });
+}, { threshold: 0.7 });
+
+observer2.observe(video2);
+
+video2.addEventListener('timeupdate', function() {
+  if (this.duration - this.currentTime < 1) { // Déclenchez 1 seconde avant la fin
+      this.style.opacity = '0'; // Commencez le fondu de la vidéo
+      setTimeout(() => {
+          text2.style.display = 'block';
+          text2.style.opacity = '1'; // Montrez le texte
+      }, 1000); // Après que l'opacité commence à changer
+  }
+});
+
 });
 
 gsap.registerPlugin(ScrollTrigger);
@@ -198,7 +231,7 @@ gsap.to("#Menma", {
   scale: 1,
   scrollTrigger: {
     trigger: "#Menma",
-    start: "top 140",
+    start: "top 180",
     end: "+=280",
     scrub: true,
     onEnter: () => (changeText("Menma", "Katsu Uchiha"), ajusterLargeur("#Menma", "100%")),

@@ -19,6 +19,9 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 2%;
+  video{
+    width: 100%;
+  }
 }
 
 #playButton{
@@ -428,6 +431,24 @@ color: #111;
   padding-top: 7%;
 }
 
+.titre-histoireuchi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-left: 11%;
+  p{
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 3.25em;
+    color: transparent; /* Rend la couleur du texte transparente pour afficher l'arrière-plan */
+    background: linear-gradient(to bottom, white, rgb(73, 1, 1)); /* Crée un dégradé de blanc en haut à rouge en bas */
+    -webkit-background-clip: text; /* Applique l'arrière-plan uniquement au texte pour les navigateurs Webkit comme Chrome et Safari */
+    background-clip: text; /* Applique l'arrière-plan uniquement au texte pour tous les navigateurs qui le supportent */
+    display: inline; /* ou 'block' selon vos besoins, nécessaire pour que background-clip fonctionne */
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 .titre-histoire2{
   display: flex;
   justify-content: center;
@@ -467,6 +488,19 @@ color: #111;
       border-radius: 50%;
     }
   }
+
+  .uchihachad{
+    padding-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    img{
+      width: 50%;
+      border-radius: 10%;
+    }
+  }
+
   .histoireMenma{
     width: 95%;
     text-align: center;
@@ -488,6 +522,20 @@ color: #111;
       line-height: 150%;
       color: #fff;
       width: 100%;
+    }
+  }
+
+  .histoireMenmauchi{
+    width: 95%;
+    text-align: center;
+    p{
+      font-family: "Raleway", sans-serif;
+      font-size: 1em;
+      line-height: 150%;
+      color: #fff;
+      width: 100%;
+      padding-left: 10%;
+      padding-right: 10%;
     }
   }
 
@@ -543,6 +591,12 @@ color: #111;
 .lekunai{
     width: 10%;
     margin-left: 3%;
+}
+
+.logochia{
+  width: 8%;
+  padding-left: 5%;
+  object-fit: cover;
 }
 
 .card3{
@@ -1349,6 +1403,12 @@ h4{
   transition: opacity 1s;
 }
 
+.apparition2 {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
 .image-container {
   margin-top: 6%;
   padding-left: 10px;
@@ -1415,6 +1475,23 @@ h4{
       height: 500px;
     }
   }
+}
+
+.containuchiha{
+  min-height: 1000px;
+}
+
+.centercrow{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  video{
+    width: 80%;
+    height: auto;
+    transition: opacity 1s ease;
+  } 
 }
 
 .swiper {
