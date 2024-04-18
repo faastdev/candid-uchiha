@@ -431,6 +431,58 @@ color: #111;
   padding-top: 7%;
 }
 
+.titre-pkmoi{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  p{
+    font-family: cursive;
+    font-size: 1.25em;
+    color: #FFFFFB;
+    text-align: center;
+  }
+}
+
+.titre-pkca{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  p{
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 3em;
+    color: transparent; 
+    background: linear-gradient(to right, white, rgb(73, 1, 1)); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    display: inline; 
+    -webkit-text-fill-color: transparent;
+  
+  }
+}
+
+.titre-pklire{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  p{
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 3em;
+    color: transparent; 
+    background: linear-gradient(to right, rgb(239, 43, 43), rgb(48, 1, 1)); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    display: inline; 
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(10px 10px 10px rgba(158, 8, 8, 0.7));
+  }
+}
+
 .titre-capacites{
   display: flex;
   justify-content: center;
@@ -440,6 +492,100 @@ color: #111;
   font-size: 3.25em;
   padding-top: 7%;
 }
+
+
+.containerhrp {
+  display: flex;
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  min-height: 500px;
+  padding-top: 5%;
+  .image-section {
+    display: flex;
+    padding-left: 15%;
+    img {
+      width: 100%; /* Adaptez la taille selon vos besoins */
+      height: auto; /* Maintient le ratio d'aspect de l'image */
+      filter: drop-shadow(30px 30px 30px rgba(158, 8, 8, 0.7)); /* Ajoute une ombre à l'image */
+    }
+  }
+
+  .quijesuis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    .textequi{
+      padding-bottom: 5%;
+      text-align: center;
+      padding-right: 8%;
+      p{
+        font-family: cursive;
+        font-size: 1em;
+        color: #FFFFFB;
+      }
+    }
+  }
+
+  .grid-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Deux colonnes de taille égale */
+      grid-template-rows: repeat(4); /* Quatre lignes, la hauteur s'adapte au contenu */
+      gap: 10px; /* Espacement entre les cellules */
+      width: 100%;
+      padding-right: 7%;
+        .grid-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          img{
+            margin-top: 5%;
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+          }
+          p{
+            font-family: "Raleway", sans-serif;
+            font-size: 0.9em;
+            color: #fff;
+            padding-left: 10%;
+            padding-right: 10%;
+            width: 100%;
+          }
+        }
+  }
+
+}
+
+.flexpersos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4%;
+  padding-left: 15%;
+  padding-right: 15%;
+  width: 100%;
+  gap: 5%;
+    img{
+      width: 50%; 
+      border-radius: 24%;
+    }
+    .person1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      p{
+        font-family: cursive;
+        font-size: 1em;
+        color: #fff;
+        text-align: center;
+      }
+    }
+}
+
 
 .titre-histoireuchi{
   display: flex;
@@ -1522,6 +1668,10 @@ h4{
     }
   }
 }
+
+
+
+
 
 .content-container {
   position: relative;
