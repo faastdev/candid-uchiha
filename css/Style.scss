@@ -555,6 +555,7 @@ color: #111;
             width: 100%;
           }
         }
+        
   }
 
 }
@@ -1639,6 +1640,11 @@ h4{
     width: 100%; /* Largeur complète de la colonne */
     padding-top: 20%; 
     /* Ratio pour maintenir une forme carrée, ajustez selon le besoin */ /* Couleur de fond des éléments remplis */
+  }
+  .grid-itemyuzo {
+    width: 100%;
+    padding-top: 28%;
+    padding-right: 4%;
   }
   .grid-item-flex {
     display: flex;
