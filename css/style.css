@@ -132,8 +132,10 @@ body {
 .bandeau-bordure_text .column {
   flex: 1;
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end; /* Aligner tous les éléments enfants en bas de la colonne */
 }
 .bandeau-bordure_text .column img {
   padding-top: 8%;
@@ -142,6 +144,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10%;
+  margin-top: auto; /* Pousse l'image vers le bas de la colonne */
 }
 .bandeau-bordure_text h3 {
   font-family: "Rubik Mono One", sans-serif;

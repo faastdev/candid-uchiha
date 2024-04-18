@@ -113,14 +113,17 @@ body {
       .column{
         flex: 1;
         padding: 0 10px;
+        display: flex;
+        flex-direction: column;
         align-items: center; // Centrer horizontalement l'image dans la colonne
-        justify-content: center;
+        justify-content: flex-end;  /* Aligner tous les éléments enfants en bas de la colonne */
         img{
           padding-top: 8%;
           width: 100%;
           height: 250px;
           object-fit: cover;
           border-radius: 10%;
+          margin-top: auto;  /* Pousse l'image vers le bas de la colonne */
         }
       }
       h3{
