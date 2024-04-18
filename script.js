@@ -180,6 +180,8 @@ video2.addEventListener('timeupdate', function() {
   }
 });
 
+aos.init
+
 });
 
 gsap.registerPlugin(ScrollTrigger);
