@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Apply the animation to all '.card2' elements
   cards2.forEach(addCardAnimation);
 
+  AOS.init({
+    delay: 0,         // Valeur du délai avant que l'animation ne commence.
+    anchorPlacement: 'top-bottom',  // Commence les animations quand le haut de l'élément atteint le bas du viewport.
+    startEvent: 'load'  // Utilise l'événement 'load' pour démarrer les animations AOS.
+  });
+
 });
 
 var videos = document.querySelectorAll('.video');
