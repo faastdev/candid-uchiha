@@ -36,76 +36,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     }
   }
-  
-  var videos = document.querySelectorAll('.video');
-  var audio = document.getElementById('myaudio');
-  audio.volume = 0.05; // Réglez le volume à 50%
-  document.getElementById('playButton').addEventListener('click', function() {
-    var audio = document.getElementById('myaudio');
-    audio.play();
-    this.style.display = 'none';
-});
-
-  videos.forEach(function(video) {
-    video.addEventListener('play', function() {
-        // Mettre en pause la musique de fond
-        audio.pause();
-    });
-
-    // Optionnel: Reprise de la musique de fond lorsque toutes les vidéos sont en pause
-    video.addEventListener('pause', resumeMusic);
-    video.addEventListener('ended', resumeMusic);
-});
-
-function resumeMusic() {
-    // Vérifie si tous les vidéos sont en pause
-    let allPaused = true;
-    videos.forEach(function(video) {
-        if (!video.paused) {
-            allPaused = false;
-        }
-    });
-    if (allPaused) {
-        audio.play();
-    }
-}
-
-var video = document.getElementById('myVideo');
-var contentAfterVideo = document.getElementById('apparition');
-video.volume = 0.1; // Réglez le volume à
-
-  var options = {
-    root: null, // par défaut, l'élément racine est la fenêtre de visualisation
-    rootMargin: '-160px',
-    threshold: 1  // 50% de l'élément doit être visible
-  };
-
-  var observer = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        video.play();
-      }
-    });
-  }, options);
-
-  observer.observe(video);
-
-  video.onended = function() {
-    // Commence le fondu de la vidéo
-    video.style.transition = "opacity 1s";
-    video.style.opacity = 0;
-
-    // Assurez-vous que la vidéo disparaisse complètement après le fondu
-    setTimeout(function() {
-      video.style.display = 'none';
-
-      // Après que la vidéo a disparu, montrez le contenu suivant
-      contentAfterVideo.style.display = 'block';
-      setTimeout(function() {
-        contentAfterVideo.style.opacity = 1;
-      }, 10); // Un petit délai pour que le display change prenne effet
-    }, 1000); // Correspond à la durée de la transition de 2 secondes
-  };
 
   function createBubbles() {
     setInterval(createBubble, 2000); // Créer une nouvelle bulle toutes les 2 secondes
@@ -147,6 +77,78 @@ video.volume = 0.1; // Réglez le volume à
   // Apply the animation to all '.card2' elements
   cards2.forEach(addCardAnimation);
 
+});
+
+var videos = document.querySelectorAll('.video');
+var audio = document.getElementById('myaudio');
+audio.volume = 0.05; // Réglez le volume à 50%
+document.getElementById('playButton').addEventListener('click', function() {
+  var audio = document.getElementById('myaudio');
+  audio.play();
+  this.style.display = 'none';
+});
+
+videos.forEach(function(video) {
+  video.addEventListener('play', function() {
+      // Mettre en pause la musique de fond
+      audio.pause();
+  });
+
+  // Optionnel: Reprise de la musique de fond lorsque toutes les vidéos sont en pause
+  video.addEventListener('pause', resumeMusic);
+  video.addEventListener('ended', resumeMusic);
+});
+
+function resumeMusic() {
+  // Vérifie si tous les vidéos sont en pause
+  let allPaused = true;
+  videos.forEach(function(video) {
+      if (!video.paused) {
+          allPaused = false;
+      }
+  });
+  if (allPaused) {
+      audio.play();
+  }
+}
+
+var video = document.getElementById('myVideo');
+var contentAfterVideo = document.getElementById('apparition');
+video.volume = 0.1; // Réglez le volume à
+
+var options = {
+  root: null, // par défaut, l'élément racine est la fenêtre de visualisation
+  rootMargin: '-160px',
+  threshold: 1  // 50% de l'élément doit être visible
+};
+
+var observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      video.play();
+    }
+  });
+}, options);
+
+observer.observe(video);
+
+video.onended = function() {
+  // Commence le fondu de la vidéo
+  video.style.transition = "opacity 1s";
+  video.style.opacity = 0;
+
+  // Assurez-vous que la vidéo disparaisse complètement après le fondu
+  setTimeout(function() {
+    video.style.display = 'none';
+
+    // Après que la vidéo a disparu, montrez le contenu suivant
+    contentAfterVideo.style.display = 'block';
+    setTimeout(function() {
+      contentAfterVideo.style.opacity = 1;
+    }, 10); // Un petit délai pour que le display change prenne effet
+  }, 1000); // Correspond à la durée de la transition de 2 secondes
+};
+
 var video2 = document.getElementById('videoPlayer');
 var fadeOutDelay = 2000; // Délai en millisecondes avant que la vidéo ne commence à disparaître
 var text2 = document.querySelector('.apparition2');
@@ -178,12 +180,6 @@ video2.addEventListener('timeupdate', function() {
           text2.style.opacity = '1'; // Montrez le texte
       }, 1000); // Après que l'opacité commence à changer
   }
-});
-
-AOS.init({
-  delay: 0,
-})
-
 });
 
 gsap.registerPlugin(ScrollTrigger);
