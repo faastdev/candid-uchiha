@@ -778,6 +778,51 @@ footer {
   color: white;
 }
 
+.katsucaractere {
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 1 fr pour l'image, 2 fr pour les caractéristiques */
+  align-items: center; /* Centre les éléments verticalement */
+  gap: 20px; /* Espace entre les colonnes */
+}
+
+.leftside {
+  display: flex;
+  justify-content: center; /* Centre l'image horizontalement dans la colonne */
+  align-items: center; /* Centre l'image verticalement */
+}
+
+.leftside img {
+  width: 30%; /* Adapte la largeur de l'image à celle de la colonne */
+  max-width: 300px; /* Limite la taille maximale de l'image */
+  height: auto; /* Garde le ratio d'aspect original de l'image */
+}
+
+.rightside {
+  display: flex;
+  flex-direction: column; /* Organise les éléments verticalement */
+}
+
+.titre {
+  font-weight: bold;
+  margin: 10px 0 0; /* Espacement pour les titres */
+  color: #FFFFFB;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.sous_titre {
+  margin: 0 0 10px; /* Espacement pour les sous-titres */
+  color: #FFFFFB;
+  font-size: 1em;
+  font-weight: 500;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+
 nav {
   position: fixed;
   opacity: 0;
