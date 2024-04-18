@@ -97,7 +97,7 @@ document.getElementById('playButton').addEventListener('click', function() {
 videos.forEach(function(video) {
   video.addEventListener('play', function() {
       // Mettre en pause la musique de fond
-      audio.pause();
+      audio.volume= 0.04;
   });
 
   // Optionnel: Reprise de la musique de fond lorsque toutes les vidéos sont en pause
@@ -114,7 +114,7 @@ function resumeMusic() {
       }
   });
   if (allPaused) {
-      audio.play();
+      audio.volume = 0.05;
   }
 }
 
