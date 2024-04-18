@@ -180,7 +180,9 @@ video2.addEventListener('timeupdate', function() {
   }
 });
 
-aos.init
+AOS.init({
+  delay: 0,
+})
 
 });
 
