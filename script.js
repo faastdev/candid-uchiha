@@ -114,7 +114,7 @@ function resumeMusic() {
       }
   });
   if (allPaused) {
-      audio.volume = 0.05;
+      audio.volume = 0.19;
   }
 }
 
