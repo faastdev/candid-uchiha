@@ -649,6 +649,127 @@ color: #111;
     }
   }
 
+  .menmachadbis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    position: relative;
+  }
+  
+  .menmachadbis .shadow {
+    position: absolute;
+    width: 50%;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(158, 8, 8, 0.6);
+    -webkit-mask-image: url('../images/akatsuki_nuage.png');
+    mask-image: url('../images/akatsuki_nuage.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    filter: blur(10px);
+    z-index: 0; /* Ensure the shadow is behind the image */
+    top: 10px;
+    left: 40px;
+  }
+  
+  .menmachadbis img {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-mask-image: url('../images/akatsuki_nuage.png');
+    mask-image: url('../images/akatsuki_nuage.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    z-index: 1; /* Ensure the image is above the shadow */
+    position: relative;
+  }
+
+  .menmachadbis2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: relative; /* This ensures that the shadow is positioned relative to this container */
+  }
+  
+  .menmachadbis2 .shadow2 {
+    position: absolute;
+    width: 50%;
+    height: 250px;
+    background-color: rgba(158, 8, 8, 0.4);
+    -webkit-mask-image: url('../images/Parchemin_ouvert.png');
+    mask-image: url('../images/Parchemin_ouvert.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    filter: blur(10px);
+    z-index: 0; /* Ensure the shadow is behind the image */
+    top: 30px;
+    left: 10px; /* Adjust these values to position the shadow */
+  }
+  
+  .menmachadbis2 img {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    -webkit-mask-image: url('../images/Parchemin_ouvert.png');
+    mask-image: url('../images/Parchemin_ouvert.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    z-index: 1; /* Ensure the image is above the shadow */
+    position: relative; /* Position relative to ensure proper stacking */
+  }
+
+
+  .menmachadbis3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: relative; /* This ensures that the shadow is positioned relative to this container */
+  }
+  
+  .menmachadbis3 .shadow3 {
+    position: absolute;
+    width: 50%;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-mask-image: url('../images/toile_supp.png');
+    mask-image: url('../images/toile_supp.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    filter: blur(10px);
+    z-index: 0; /* Ensure the shadow is behind the image */
+    top: 20px;
+    left: 25px; /* Adjust these values to position the shadow */
+  }
+  
+  .menmachadbis3 img {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    -webkit-mask-image: url('../images/toile_supp.png');
+    mask-image: url('../images/toile_supp.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    z-index: 1; /* Ensure the image is above the shadow */
+    position: relative; /* Position relative to ensure proper stacking */
+  }
+  
+
   .uchihachad{
     padding-top: 3%;
     display: flex;
@@ -1617,15 +1738,15 @@ h4{
   font-family: "Rubik Mono One", sans-serif;
   font-size: 3.25em;
   padding-top: 7%;
+  padding-bottom: 8%;
 }
 
 .arbre{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5%;
   img{
-    width: 25%;
+    width: 80%;
   }
 }
 

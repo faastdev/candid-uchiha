@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 var videos = document.querySelectorAll('.video');
 var audio = document.getElementById('myaudio');
-audio.volume = 0.05; // Réglez le volume à 50%
+audio.volume = 0.19; // Réglez le volume à 50%
 document.getElementById('playButton').addEventListener('click', function() {
   var audio = document.getElementById('myaudio');
   audio.play();
@@ -221,10 +221,10 @@ gsap.to("#Menma", {
     start: "top 180",
     end: "+=280",
     scrub: true,
-    onEnter: () => (changeText("Menma", "Katsu Uchiha"), ajusterLargeur("#Menma", "100%")),
-    onLeave: () => (changeText("Menma", "Caractère Katsu Uchiha"), ajusterLargeur("#Menma", "150%")), 
-    onEnterBack: () => changeText("Menma", "Caractère Katsu Uchiha"),
-    onLeaveBack: () => (changeText("Menma", "Katsu Uchiha"), ajusterLargeur("#Menma", "100%")),
+    onEnter: () => (changeText("Menma", " ????? Uchiha"), ajusterLargeur("#Menma", "100%")),
+    onLeave: () => (changeText("Menma", "Caractère ????? Uchiha"), ajusterLargeur("#Menma", "150%")), 
+    onEnterBack: () => changeText("Menma", "Caractère ????? Uchiha"),
+    onLeaveBack: () => (changeText("Menma", "????? Uchiha"), ajusterLargeur("#Menma", "100%")),
   }
 });
 
