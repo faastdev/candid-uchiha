@@ -209,22 +209,3 @@ function ajusterLargeur(selector, nouvelleLargeur) {
     ease: "power1.inOut", // Facultatif : Type d'animation pour une transition plus douce
   });
 }
-
-// Votre animation existante
-gsap.to("#Menma", {
-  y: 680, // Ajustez cette valeur selon les besoins
-  x: -300,
-  autoAlpha: 1,
-  scale: 1,
-  scrollTrigger: {
-    trigger: "#Menma",
-    start: "top 180",
-    end: "+=280",
-    scrub: true,
-    onEnter: () => (changeText("Menma", " ????? Uchiha"), ajusterLargeur("#Menma", "100%")),
-    onLeave: () => (changeText("Menma", "Caractère ????? Uchiha"), ajusterLargeur("#Menma", "150%")), 
-    onEnterBack: () => changeText("Menma", "Caractère ????? Uchiha"),
-    onLeaveBack: () => (changeText("Menma", "????? Uchiha"), ajusterLargeur("#Menma", "100%")),
-  }
-});
-
